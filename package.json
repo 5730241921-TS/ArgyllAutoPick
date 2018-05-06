@@ -1,0 +1,19 @@
+{
+  "name": "argyii",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "thanet",
+  "license": "MIT",
+  "dependencies": {
+    "@google-cloud/vision": "^0.14.0",
+    "cheerio": "^1.0.0-rc.2",
+    "fs-extra": "^5.0.0",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2",
+    "tough-cookie": "^2.3.4"
+  }
+}
