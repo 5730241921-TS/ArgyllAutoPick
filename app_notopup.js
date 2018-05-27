@@ -18,11 +18,11 @@ var cookie = new tough.Cookie({
     key: "thanet",
     value: "thanet",
     domain: 'client.argyll-tech.com',
-    httpOnly: true,
+    httpOnly: false,
     maxAge: "Infinity"
 });
 var cookiejar = rp.jar();
-cookiejar.setCookie(cookie, 'http://client.argyll-tech.com');
+cookiejar.setCookie(cookie, 'https://client.argyll-tech.com');
 
 
 var state = 1;
@@ -44,7 +44,7 @@ var bot = () => {
             console.log("time : ", new Date().toLocaleString('en-US'))
             lock = true;
             var option = {
-                uri: 'http://client.argyll-tech.com/assets/captcha/captcha.php',
+                uri: 'https://client.argyll-tech.com/assets/captcha/captcha.php',
                 jar: cookiejar,
                 resolveWithFullResponse: true,
                 headers: {
@@ -71,7 +71,7 @@ var bot = () => {
                     console.log(capcha);
                     var option = {
                         method: 'POST',
-                        uri: 'http://client.argyll-tech.com/login_check',
+                        uri: 'https://client.argyll-tech.com/login_check',
                         jar: cookiejar,
                         headers: {
                             'User-Agent': 'Request-Promise',
@@ -116,7 +116,7 @@ var bot = () => {
             lock = true;
             var option = {
                 method: 'GET',
-                uri: 'http://client.argyll-tech.com/user/dashboard',
+                uri: 'https://client.argyll-tech.com/user/dashboard',
                 resolveWithFullResponse: true,
                 headers: {
                     'User-Agent': 'Request-Promise'
@@ -161,7 +161,7 @@ var bot = () => {
             console.log("time : ", new Date().toLocaleString('en-US'))
             lock = true;
             var option = {
-                uri: 'http://client.argyll-tech.com/user/campaigns',
+                uri: 'https://client.argyll-tech.com/user/campaigns',
                 jar: cookiejar,
                 resolveWithFullResponse: true,
                 headers: {
@@ -204,7 +204,7 @@ var bot = () => {
                                 // var divMin = Math.floor((diff / (1000 * 60)) % 60);
                                 row.point = row.point / parseInt(divDay + 3);
                                 //row.time = divDay + "Day " + divHr + "Hr " + divMin + "Min";
-                                if (roi >= 2.4 && divDay == 0) {
+                                if (roi >= 1.9 && divDay == 0) {
                                     rows.push(row);
                                 }
                             }
@@ -235,7 +235,7 @@ var bot = () => {
                             }
                             var option = {
                                 method: 'POST',
-                                uri: 'http://client.argyll-tech.com/index.php/user/campaign_update_bet',
+                                uri: 'https://client.argyll-tech.com/index.php/user/campaign_update_bet',
                                 jar: cookiejar,
                                 headers: {
                                     'User-Agent': 'Request-Promise',
@@ -298,7 +298,7 @@ var bot = () => {
             }
             var option = {
                 method: 'POST',
-                uri: 'http://client.argyll-tech.com/index.php/user/product/update_top_up',
+                uri: 'https://client.argyll-tech.com/index.php/user/product/update_top_up',
                 jar: cookiejar,
                 headers: {
                     'User-Agent': 'Request-Promise',
